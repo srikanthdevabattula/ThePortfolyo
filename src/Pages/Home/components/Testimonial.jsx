@@ -14,7 +14,7 @@ import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
 const Testimonial = ({data}) => {
   return (
-    <div>   <Swiper
+    <div id='Testimonial'>   <Swiper
     spaceBetween={30}
     centeredSlides={true}
     autoplay={{

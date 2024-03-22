@@ -24,7 +24,7 @@ const GetInTouch = ({data}) => {
         });
       };
   return (
-    <div className='bg-gray-100 py-4 px-[40px]'>
+    <div className='bg-gray-100 py-4 px-[40px]' id='GetInTouch'>
        <h1 className='text-[40px] lg:text-[35px] md:text-[30px] sm:text-[20px]  font-bold text-center'>Get in touch</h1>
        <div className='flex sm:flex-col space-x-[30px] sm:space-x-0'>
        <form onSubmit={handleSubmit} className="  pt-6 pb-8 mb-4 w-[50%] sm:w-[100%]">
