@@ -2,7 +2,7 @@ import React from 'react'
 import { IoLocationOutline } from "react-icons/io5";
 const Timeline = ({data}) => {
   return (
-    <div className='font-poppins p-[40px] sm:p-[10px] bg-gray-50'>
+    <div id='Timeline' className='font-poppins p-[40px] sm:p-[10px] bg-gray-50'>
          <h1 className='text-center text-[40px] lg:text-[35px] md:text-[30px] sm:text-[20px]  font-bold'>Timeline</h1>
 
          <div className='px-[200px] lg:px-[150px] md:px-[50px] sm:px-[0px]'>

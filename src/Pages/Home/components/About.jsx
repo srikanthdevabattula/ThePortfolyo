@@ -5,7 +5,9 @@ import { Link } from "react-router-dom";
 const About = ({ data }) => {
 	
     return (
-        <div className="bg-gray-50">
+        <div className="bg-gray-50" id='About'>
+			  <h1 className='text-[40px] lg:text-[35px] md:text-[30px] sm:text-[20px]  font-bold text-center font-poppins pt-[40px]'>About</h1>
+        
             <div className="flex sm:flex-col h-[500px] lg:h-[450px] md:h-[370px] sm:h-[auto] px-[100px] lg:px-[80px] md:px-[60px] sm:px-[40px] py-[50px] lg:py-[40px] md:py-[30px] sm:py-[20px]  font-poppins">
                 <div className="w-[70%] sm:w-[100%] sm:order-2 px-[40px] lg:px-[30px] md:px-[20px] sm:px-[0px] space-y-[50px] lg:space-y-[40px] md:space-y-[30px] sm:space-y-[20px] sm:my-[20px]">
 					<div className="space-y-1">

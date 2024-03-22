@@ -16,7 +16,7 @@ const Projects = ({ data }) => {
   };
 
   return (
-    <div className='p-[30px] sm:p-[20px]'>
+    <div className='p-[30px] sm:p-[20px]' id='Projects'>
       <h1 className='text-[40px] lg:text-[35px] md:text-[30px] sm:text-[20px]  font-bold text-center font-poppins mb-4'>Projects</h1>
       <div className='flex  flex-wrap gap-[30px] sm:gap-[15px] justify-center font-poppins'>
         {data.projects.map((project, index) => (

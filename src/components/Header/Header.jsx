@@ -1,10 +1,11 @@
-import { Link } from "react-router-dom";
 
-import { CiSearch } from "react-icons/ci";
+import {Link} from 'react-scroll'
+
+
 import { BsList } from "react-icons/bs";
-import { FiShoppingCart } from "react-icons/fi";
+
 import { useState } from "react";
-import { AiFillHeart } from "react-icons/ai";
+
 const Header = () => {
 	const [navbar,setnavbar]=useState(false)
 	return (
@@ -20,25 +21,26 @@ const Header = () => {
 
 
 				<div className="flex items-center gap-6 lg:gap-5 md:gap-4 text-[20px] lg:text-[17px] md:text-[14px] sm:hidden text-[#292F36] font-semibold font-Jost">
-				<h3>About</h3>
-					<h3>Services</h3>
-					<h3>Skills</h3>
-					<h3>Projects</h3>
-					<h3>Timeline</h3>
-					<h3>Testimonial</h3>
-					<h3>Contact</h3>
+				<Link  activeClass='active' to='About' spy={true} smooth={true}><h3>About</h3></Link>
+					<Link activeClass='active' to='Services' spy={true} smooth={true}><h3>Services</h3></Link>
+					<Link  activeClass='active' to='Skills' spy={true} smooth={true}><h3>Skills</h3></Link>
+					<Link  activeClass='active' to='Projects' spy={true} smooth={true}><h3>Projects</h3></Link>
+					<Link  activeClass='active' to='Timeline' spy={true} smooth={true}><h3>Timeline</h3></Link>
+					<Link  activeClass='active' to='Testimonial' spy={true} smooth={true}><h3>Testimonial</h3></Link>
+					<Link  activeClass='active' to='GetInTouch' spy={true} smooth={true}><h3>Contact</h3></Link>
 					</div>
 				<div className="flex space-x-4">
 			<BsList  onClick={()=>setnavbar(!navbar)} className="sm:flex hidden"/>
 					</div></nav>
 			{navbar&&<div className="sm:flex items-center justify-center sm:gap-3 sm:text-[8px] bg-gray-100 p-2 w-[100%]   hidden text-[#292F36] font-Jost mt-0">
-			<h3>About</h3>
-					<h3>Services</h3>
-					<h3>Skills</h3>
-					<h3>Projects</h3>
-					<h3>Timeline</h3>
-					<h3>Testimonial</h3>
-					<h3>Contact</h3>
+			<Link  activeClass='active' to='About' spy={true} smooth={true}><h3>About</h3></Link>
+					<Link activeClass='active' to='Services' spy={true} smooth={true}><h3>Services</h3></Link>
+					<Link  activeClass='active' to='Skills' spy={true} smooth={true}><h3>Skills</h3></Link>
+					<Link  activeClass='active' to='Projects' spy={true} smooth={true}><h3>Projects</h3></Link>
+					<Link  activeClass='active' to='Timeline' spy={true} smooth={true}><h3>Timeline</h3></Link>
+					<Link  activeClass='active' to='Testimonial' spy={true} smooth={true}><h3>Testimonial</h3></Link>
+					<Link  activeClass='active' to='GetInTouch' spy={true} smooth={true}><h3>Contact</h3></Link>
+					
 			
 				</div>}
 		</header>
