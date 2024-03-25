@@ -9,7 +9,7 @@ import { useState } from "react";
 const Header = () => {
 	const [navbar,setnavbar]=useState(false)
 	return (
-		<header className="w-full bg-[white] z-10 fixed h-[80px] sm:h-[auto] p-4 sm:p-2 px-[5%] sm:px-[3%] flex sm:flex-col items-center justify-center ">
+		<header className="w-full bg-[white] z-10 fixed h-[70px] sm:h-[auto] p-4 sm:p-2 px-[5%] sm:px-[3%] flex sm:flex-col items-center justify-center ">
 			<nav className="flex items-center justify-center sm:w-[100%]   space-x-[200px] lg:space-x-[100px] md:space-x-[50px] sm:space-x-3 sm:justify-between">
 				
 				<Link to='/'><div className="flex items-center space-x-2 sm:space-x-1">
@@ -20,7 +20,7 @@ const Header = () => {
 					
 
 
-				<div className="flex items-center gap-6 lg:gap-5 md:gap-4 text-[20px] lg:text-[17px] md:text-[14px] sm:hidden text-[#292F36] font-semibold font-Jost">
+				<div className="flex cursor-pointer items-center gap-6 lg:gap-5 md:gap-4 text-[20px] lg:text-[17px] md:text-[14px] sm:hidden text-[#292F36] font-semibold font-Jost">
 				<Link  activeClass='active' to='About' spy={true} smooth={true}><h3>About</h3></Link>
 					<Link activeClass='active' to='Services' spy={true} smooth={true}><h3>Services</h3></Link>
 					<Link  activeClass='active' to='Skills' spy={true} smooth={true}><h3>Skills</h3></Link>
@@ -32,7 +32,7 @@ const Header = () => {
 				<div className="flex space-x-4">
 			<BsList  onClick={()=>setnavbar(!navbar)} className="sm:flex hidden"/>
 					</div></nav>
-			{navbar&&<div className="sm:flex items-center justify-center sm:gap-3 sm:text-[8px] bg-gray-100 p-2 w-[100%]   hidden text-[#292F36] font-Jost mt-0">
+			{navbar&&<div className="sm:flex cursor-pointer items-center justify-center sm:gap-3 sm:text-[8px] bg-gray-100 p-2 w-[100%]   hidden text-[#292F36] font-Jost mt-0">
 			<Link  activeClass='active' to='About' spy={true} smooth={true}><h3>About</h3></Link>
 					<Link activeClass='active' to='Services' spy={true} smooth={true}><h3>Services</h3></Link>
 					<Link  activeClass='active' to='Skills' spy={true} smooth={true}><h3>Skills</h3></Link>
