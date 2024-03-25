@@ -24,16 +24,16 @@ const GetInTouch = ({data}) => {
         });
       };
   return (
-    <div className='bg-gray-100 py-4 px-[40px]' id='GetInTouch'>
+    <div className=' py-4 px-[40px]' id='GetInTouch'>
        <h1 className='text-[40px] lg:text-[35px] md:text-[30px] sm:text-[20px]  font-bold text-center'>Get in touch</h1>
        <div className='flex sm:flex-col space-x-[30px] sm:space-x-0'>
        <form onSubmit={handleSubmit} className="  pt-6 pb-8 mb-4 w-[50%] sm:w-[100%]">
         <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
+          <label className="block text-[black] text-sm font-bold mb-2" htmlFor="name">
             Name
           </label>
           <input
-            className="border-b-[1px] border-[black] w-full py-2 px-3 text-gray-700  focus:outline-none focus:shadow-outline"
+            className="border-b-[1px] border-[black] bg-inherit w-full py-2 px-3 text-[white]  focus:outline-none focus:shadow-outline"
             id="name"
             type="text"
             placeholder="Your name"
@@ -44,11 +44,11 @@ const GetInTouch = ({data}) => {
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
+          <label className="block text-[black]  text-sm font-bold mb-2" htmlFor="email">
             Email
           </label>
           <input
-            className="border-b-[1px] border-[black] w-full py-2 px-3 text-gray-700  focus:outline-none focus:shadow-outline"
+            className="border-b-[1px] bg-inherit border-[black] w-full py-2 px-3 text-[white]  focus:outline-none focus:shadow-outline"
             id="email"
             type="email"
             placeholder="Your email"
@@ -59,11 +59,11 @@ const GetInTouch = ({data}) => {
           />
         </div>
         <div className="mb-6">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="message">
+          <label className="block text-[black] text-sm font-bold mb-2" htmlFor="message">
             Message
           </label>
           <textarea
-            className="border-b-[1px] border-[black] w-full py-2 px-3 text-gray-700  focus:outline-none focus:shadow-outline"
+            className="border-b-[1px] bg-inherit border-[black] w-full py-2 px-3 text-[white]  focus:outline-none focus:shadow-outline"
             id="message"
             placeholder="Your message"
             name="message"
@@ -75,7 +75,7 @@ const GetInTouch = ({data}) => {
         </div>
         <div className="flex items-center justify-center">
           <button
-            className="bg-[#4eb7f5] text-[20px] rounded-[20px] w-[200px] md:w-[150px] text-white font-bold py-2 px-4  focus:outline-none focus:shadow-outline"
+            className="bg-[#4eb7f5] hover:bg-[#620e9a] shadow-md hover:shadow-[#ffffff5c] text-[20px] rounded-[20px] w-[200px] md:w-[150px] text-white font-bold py-2 px-4  focus:outline-none focus:shadow-outline"
             type="submit"
           >
             Send
@@ -84,8 +84,8 @@ const GetInTouch = ({data}) => {
       </form>
       
       <div className='w-[50%] sm:w-[100%] flex flex-col font-poppins font-bold  items-center justify-center space-y-3'>
-       <h1 className='text-[25px] md:text-[20px] text-[#070d17] flex items-center'><IoMail className='mr-2'/> {data.email}</h1>
-            <h1 className='text-[25px] md:text-[20px] text-[#03090a] flex items-center'><MdOutlineCall className='mr-2'/> {data.about.phoneNumber}</h1>
+       <h1 className='text-[25px] md:text-[20px] text-[#ffffff] flex items-center'><IoMail className='mr-2'/> {data.email}</h1>
+            <h1 className='text-[25px] md:text-[20px] text-[#ccedff] flex items-center'><MdOutlineCall className='mr-2'/> {data.about.phoneNumber}</h1>
       </div>
       </div>
     </div>

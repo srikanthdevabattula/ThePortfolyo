@@ -40,7 +40,7 @@ const Home = () => {
     }
 
     return (
-        <section className="pt-[90px] sm:pt-[40px]">
+        <section className="pt-[90px] sm:pt-[40px] bg-gradient-to-r from-[#48235a] via-[#45125d] to-[#6c1197]">
             <motion.div ref={heroRef} animate={{ y: heroInView ? 0 : 100 }} initial={{ y: 100 }} transition={{ duration: 0.5 }}>
                 <Hero data={info} />
             </motion.div>
