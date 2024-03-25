@@ -21,7 +21,7 @@ const Testimonial = ({data}) => {
         spaceBetween={30}
         centeredSlides={true}
         autoplay={{
-          delay: 3500,
+          delay: 5500,
           disableOnInteraction: false,
         }}
         pagination={{
@@ -37,9 +37,9 @@ const Testimonial = ({data}) => {
               <div className='flex flex-col items-center space-y-2'>
                 <img src={testimonial.image.url} alt="" className='w-[100px] lg:w-[90px] md:w-[75px] rounded-[100%]' />
                 <h2 className='text-[16px] lg:text-[15px] md:text-[14px] font-poppins font-semibold text-[#d55c5c] sm:text-center'>
-                  {testimonial.name} <span className='text-[black] sm:hidden'>-</span> <br className='sm:flex hidden' /> <span className='text-[#52baea]'>{testimonial.position}</span>
+                  {testimonial.name} <span className='text-[#e0e0e0] sm:hidden'>-</span> <br className='sm:flex hidden' /> <span className='text-[#52baea]'>{testimonial.position}</span>
                 </h2>
-                <p className='font-Jost text-[15px] lg:text-[14px] md:text-[13px] sm:text-[11px] text-gray-700'>{testimonial.review}</p>
+                <p className='font-Jost text-[#e3f1ac] text-[15px] lg:text-[14px] md:text-[13px] sm:text-[11px] '>{testimonial.review}</p>
               </div>
             </div>
           </SwiperSlide>
