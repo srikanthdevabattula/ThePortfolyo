@@ -1,40 +1,60 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 const Projects = ({ data }) => {
   const [showModal, setShowModal] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
-  const [tech,setTech]=useState('')
+  const [tech, setTech] = useState('');
   const openModal = (project) => {
     setSelectedProject(project);
     setShowModal(true);
   };
 
   const closeModal = () => {
+    setSelectedProject(null);
     setShowModal(false);
   };
 
   const enabledProjects = data.projects.filter(project => project.enabled);
-
   const sortedProjects = enabledProjects.sort((a, b) => a.sequence - b.sequence);
+
+  // State to track if projects are in view
+  const [isVisible, setIsVisible] = useState(false);
+
+  // Hook to detect when projects are in view
+  const { ref, inView } = useInView({
+    triggerOnce: false, // Trigger every time component comes into view
+    threshold: 0.2, // Trigger when 50% of element is in view
+    onChange: (inView) => {
+      setIsVisible(inView);
+    },
+  });
 
   return (
     <div className='p-[30px] sm:p-[10px]' id='Projects'>
-      <h1 className='text-[40px] lg:text-[35px] md:text-[30px] sm:text-[20px]  font-bold text-center font-poppins mb-4'>Projects</h1>
+      <h1 className='text-[#656565] text-[40px] lg:text-[35px] md:text-[30px] sm:text-[20px]  font-bold text-center font-poppins mb-4'>Projects</h1>
     
-      <div className='flex  flex-wrap gap-[30px] sm:gap-[15px] justify-center font-poppins'>
-      {sortedProjects.map((project, index) => (
-    <div id='333' key={index} className={`relative  w-[450px] lg:w-[330px] md:w-[280px] sm:w-[165px] h-[300px] lg:h-[280px] md:h-[250px] sm:h-[170px] flex flex-col gap-2 items-center  shadow-lg hover:shadow-[#92b1b6b3] rounded-[14px]`} >
-      <div className='h-[100%] w-[100%] flex flex-col items-center justify-center hover:bg-[#ffffffc7]'>
-        <img src={project.image.url} alt="" className='h-[100%] w-[100%] rounded-[14px]'/>
-    </div>
-    
-      <div className='absolute top-0 left-0 w-full h-full rounded-[14px] bg-[#00000094] bg-opacity-50 flex flex-col items-center space-y-3 justify-center opacity-0 hover:opacity-100 transition-opacity duration-300'>
-        <h1 className='text-white text-center text-[20px] md:text-[16px] sm:text-[12px] font-bold'>{project.title}</h1>
-        <button onClick={() => openModal(project)} className='w-[150px] sm:w-[100px] text-[16px] hover:bg-[#512390] md:text-[14px] sm:text-[12px] p-2 md:p-1 text-[white] font-semibold bg-[#4a9de5] rounded-[20px] shadow-md hover:shadow-2xl'>View Details</button>
-    </div>
-    </div>
-  ))}
+      <div className='flex  flex-wrap gap-[30px] sm:gap-[15px] justify-center font-poppins' ref={ref}>
+        {sortedProjects.map((project, index) => (
+          <motion.div
+            key={index}
+            className={`relative  w-[450px] lg:w-[330px] md:w-[280px] sm:w-[165px] h-[300px] lg:h-[280px] md:h-[250px] sm:h-[170px] flex flex-col gap-2 items-center  shadow-lg hover:shadow-[#92b1b6b3] rounded-[14px]`}
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: isVisible ? 1 : 0, scale: isVisible ? 1 : 0.8 }}
+            transition={{ duration: 0.6, delay: 1 * 0.1 }}
+            whileHover={{ scale: 1.05 }}
+          >
+            <div className='h-[100%] w-[100%] flex flex-col items-center justify-center hover:bg-[#ffffffc7]'>
+              <img src={project.image.url} alt="" className='h-[100%] w-[100%] rounded-[14px]'/>
+            </div>
+            <div className='absolute top-0 left-0 w-full h-full rounded-[14px] bg-[#00000094] bg-opacity-50 flex flex-col items-center space-y-3 justify-center opacity-0 hover:opacity-100 transition-opacity duration-300'>
+              <h1 className='text-white text-center text-[20px] md:text-[16px] sm:text-[12px] font-bold'>{project.title}</h1>
+              <button onClick={() => openModal(project)} className='w-[150px] sm:w-[100px] text-[16px] hover:bg-[#512390] md:text-[14px] sm:text-[12px] p-2 md:p-1 text-[white] font-semibold bg-[#4a9de5] rounded-[20px] shadow-md hover:shadow-2xl'>View Details</button>
+            </div>
+          </motion.div>
+        ))}
       </div>
       {/* modal */}
       {showModal && selectedProject && (
