@@ -16,7 +16,9 @@ const Testimonial = ({data}) => {
   const enabledTestimonials = data.testimonials.filter(testimonial => testimonial.enabled);
 
   return (
-    <div id='Testimonial'>
+    <div id='Testimonial' className='py-4'>
+            <h1 className='text-[#656565] text-[40px] lg:text-[35px] md:text-[30px] sm:text-[20px]  font-bold text-center font-poppins mb-4'>Testimonials</h1>
+    
       <Swiper
         spaceBetween={30}
         centeredSlides={true}

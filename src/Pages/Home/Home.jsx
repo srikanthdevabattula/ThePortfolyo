@@ -12,6 +12,7 @@ import Projects from "./components/Projects";
 import Timeline from "./components/Timeline";
 import Testimonial from "./components/Testimonial";
 import GetInTouch from "./components/GetInTouch";
+import Background from "./components/Background";
 
 const Home = () => {
     const [info, setInfo] = useState(null);
@@ -40,7 +41,8 @@ const Home = () => {
     }
 
     return (
-        <section className="pt-[90px] sm:pt-[40px] bg-gradient-to-r from-[#48235a] via-[#45125d] to-[#6c1197]">
+        <section className="pt-[90px] sm:pt-[40px] ">
+			
             <motion.div ref={heroRef} animate={{ y: heroInView ? 0 : 100 }} initial={{ y: 100 }} transition={{ duration: 0.5 }}>
                 <Hero data={info} />
             </motion.div>
